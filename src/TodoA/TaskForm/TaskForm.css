@@ -1,0 +1,31 @@
+.tform {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    margin: 1rem;
+  }
+  .tform select,
+  .tform input {
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border: solid black 1px;
+  }
+  .tform select option {
+    font-size: 0.8rem;
+  }
+  .tform button {
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: none;
+    background-color: orangered;
+    color: white;
+  }
+  
+  .check label {
+    margin-left: 1rem;
+  }

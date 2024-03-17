@@ -1,0 +1,15 @@
+.tstats {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    flex: auto;
+    background-color:rgba(59, 60, 122, 0.493);
+    color: white !important;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.573)),
+    url('../../../public/Stats.png') no-repeat center center / cover;
+  }
+  
