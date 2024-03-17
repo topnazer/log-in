@@ -1,0 +1,140 @@
+
+.auth {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  }
+  
+  .auth .form,
+  .auth .intro {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .auth .intro {
+    background: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.473)),
+      url('../../../public/hays.jpg') no-repeat center center / cover;
+    color: white !important;
+  }
+  .auth .intro h1 {
+    font-size: 5rem;
+  }
+  
+  .auth .form form {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+  }
+  .auth .form form input {
+    font-size: 1.5rem;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: solid black 1px;
+    margin-bottom: 1rem;
+    margin-top: 0.3rem;
+    cursor: pointer;
+  }
+  .auth .form form button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 51, 0);
+    color: white;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .auth .intro {
+      display: none;
+    }
+  
+    .auth .form {
+      background: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.473)),
+        url('../../../public/hays.jpg') no-repeat center center / cover;
+      color: white !important;
+    }
+  }
+  span {
+    cursor: pointer;
+    color: rgb(0, 255, 149);
+    transition: 0.3s;
+  }
+  span:hover {
+    color: red;
+  }
+  .auth .form form p span.reset-link {
+    font-weight: bold; /* Makes the reset password link bolder */
+    text-decoration: underline; /* Adds underline to emphasize it's clickable */
+    color: rgb(255, 204, 0); /* Initial color to make it stand out */
+  }
+  
+  .auth .form form p span.reset-link:hover {
+    color: rgb(255, 51, 0); /* Changes color on hover for visual feedback */
+  }
+  
+  .reset-modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .reset-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .reset-modal-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .reset-modal-content .close:hover,
+  .reset-modal-content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .reset-modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .reset-modal-content input {
+    width: calc(100% - 40px);
+    margin-top: 15px;
+  }
+  
+  .reset-modal-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .reset-modal-content button:hover {
+    background-color: #777;
+  }
+  
