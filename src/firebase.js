@@ -5,6 +5,7 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import {
   getFirestore,
@@ -45,7 +46,7 @@ export const loginWithEmailAndPassword = async (email, password) => {
   }
 };
 
-export const registerWithEmailAndPassword = async (email, password) => {
+export const registerWithEmailAndPassword = async (email, password, firstName, lastName) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(
       auth,
@@ -53,8 +54,13 @@ export const registerWithEmailAndPassword = async (email, password) => {
       password
     );
     const user = userCredential.user;
-    console.log("User registered successfully:", user.uid);
-    return user;
+    await updateProfile(user, {
+      displayName: `${firstName} ${lastName}`,
+    });
+    console.log("User registered successfully:", user.uid, user.displayName);
+    // Optionally, you might want to create a user document in Firestore here
+
+    return user; 
   } catch (error) {
     console.error("Error registering user:", error.message);
   }
