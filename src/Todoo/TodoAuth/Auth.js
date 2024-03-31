@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import './Auth.css';
+import ReCAPTCHA from "react-google-recaptcha";
 
 import {
   loginWithEmailAndPassword,
   registerWithEmailAndPassword,
-  sendPasswordResetEmail, // Ensure this is implemented in your Firebase service file
+  sendPasswordResetEmail,
 } from '../../firebase';
 
 import Theme from '../../TodoA/Theme/Theme';
@@ -33,9 +34,21 @@ function Login({ setLogin }) {
     const [password, setPassword] = useState('');
     const [resetEmail, setResetEmail] = useState('');
     const [showResetModal, setShowResetModal] = useState(false);
-  
+    const [captchaValue, setCaptchaValue] = useState(null);
+
+    const onCaptchaChange = value => {
+        console.log("Captcha value:", value);
+        setCaptchaValue(value);
+    };
+
     const handleLogin = (e) => {
       e.preventDefault();
+
+      if (!captchaValue) {
+        alert("Please solve the CAPTCHA to confirm you are not a robot.");
+        return;
+      }
+
       loginWithEmailAndPassword(email, password);
     };
   
@@ -78,6 +91,12 @@ function Login({ setLogin }) {
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       />
+      {/* CAPTCHA integration starts here */}
+      <ReCAPTCHA
+        sitekey="6Lf1LKopAAAAAE97wir-4apXaFsQ0myHefdMHPcg" // Replace with your reCAPTCHA site key
+        onChange={onCaptchaChange}
+      />
+      {/* CAPTCHA integration ends here */}
       <button type="submit">Login</button>
       <p>
         No account?
@@ -112,9 +131,24 @@ function Register({ setLogin }) {
   const [password, setPassword] = useState('');
   const [rPassword, setRPassword] = useState('');
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    registerWithEmailAndPassword(email, password);
+    if (password !== rPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+    try {
+      const user = await registerWithEmailAndPassword(email, password);
+      if(user) {
+        alert("Registration successful. Please log in.");
+        setEmail('');
+        setPassword('');
+        setRPassword('');
+        setLogin(true); // Ensure this is after registration success
+      }
+    } catch (error) {
+      alert(`Failed to register: ${error.message}`);
+    }
   };
   return (
     <div className="form">
