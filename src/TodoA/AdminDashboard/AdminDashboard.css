@@ -1,0 +1,81 @@
+/* AdminDashboard.css */
+.admin-dashboard {
+  max-width: 400px; /* Fixed width */
+  margin: 2rem auto; /* Center the form */
+  padding: 2rem;
+  background-color: #f5f6f7; /* Light grey background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.toggle-form-button {
+  display: block; /* Make the button block level */
+  width: 100%; /* Full width */
+  padding: 0.8rem 0; /* Padding top and bottom */
+  margin-bottom: 1rem; /* Margin at the bottom */
+  background-color: #1877f2; /* Facebook blue */
+  color: white;
+  border: none;
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.toggle-form-button:hover,
+button[type="submit"]:hover {
+  background-color: #165db6; /* Darker blue on hover */
+}
+
+.form-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Full width of its parent */
+  padding: 20px; /* Padding inside the container */
+  box-sizing: border-box;
+}
+
+h2 {
+  color: #1c1e21; /* Dark grey color */
+  margin-bottom: 1rem; /* Margin at the bottom */
+}
+
+label {
+  display: block; /* Make label block level */
+  margin-bottom: .5rem; /* Space between label and input */
+  color: #606770; /* Label text color */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* Full width */
+  padding: 0.8rem; /* Padding around the text */
+  margin-bottom: 1rem; /* Space after each input */
+  border: 1px solid #dddfe2; /* Light grey border */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #1877f2; /* Facebook blue border on focus */
+  outline: none;
+}
+
+button[type="submit"] {
+  display: block; /* Make the button block level */
+  width: 100%; /* Full width */
+  padding: 0.8rem 0; /* Padding top and bottom */
+  background-color: #42b72a; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}

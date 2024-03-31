@@ -5,6 +5,9 @@ import { auth } from './firebase.js';
 import Auth from './Todoo/TodoAuth/Auth.js';
 import Todo from './Todoo/Todo/Todo.js';
 
+import AdminDashboard from './AdminDashboard';
+import StudentDashboard from './StudentDashboard';
+
 function App() {
   const [user, setUser] = useState(null);
   const logout = async () => {
@@ -25,7 +28,8 @@ function App() {
   }, []);
   return (
     <div className="App">
-      {user ? <Todo user={user} logout={logout} /> : <Auth />}
+      {user ? <Todo user={user} logout={logout} /> : <Auth  />}
+
     </div>
   );
 }

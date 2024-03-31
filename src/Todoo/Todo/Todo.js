@@ -1,6 +1,6 @@
 import "./Todo.css";
 
-import { Navbar, TaskForm, TaskList, Satistics, Footer } from "../../TodoA";
+import { Navbar, TaskForm, AdminDashboard, Satistics, Footer } from "../../TodoA";
 import { useState, useEffect } from "react";
 import {
   onTasksSnapshot,
@@ -34,7 +34,7 @@ export default function Todo({ user, logout }) {
           <TaskForm handleAdd={handleAdd} />
           <Satistics tasks={tasks} />
         </div>
-        <TaskList
+        <AdminDashboard
           tasks={tasks}
           handleUpdate={handleUpdate}
           handleDelete={handleDelete}
